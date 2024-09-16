@@ -1,0 +1,42 @@
+.home {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+.home h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.featured-products {
+  margin: 2rem 0;
+  background-color: #f0f0f0;
+  padding: 1rem;
+  border-radius: 5px;
+}
+
+.featured-products ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.featured-products li {
+  margin: 0.5rem 0;
+}
+
+.cta-button {
+  display: inline-block;
+  background-color: #007bff;
+  color: white;
+  padding: 0.5rem 1rem;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: bold;
+  margin-top: 1rem;
+}
+
+.cta-button:hover {
+  background-color: #0056b3;
+}
