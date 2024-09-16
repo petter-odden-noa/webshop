@@ -1,0 +1,6 @@
+@HeatedGearShopAPI_HostAddress = http://localhost:5032
+
+GET {{HeatedGearShopAPI_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
