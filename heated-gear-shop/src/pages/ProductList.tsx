@@ -1,29 +1,18 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import { Product, ProductService } from '../services/ProductService';
 import ProductCard from '../components/ProductCard';
 
-// Sample product data
-const products = [
-  {
-    id: 1,
-    name: 'Heated Jacket - Black',
-    image: '/images/heated-jacket-black.jpg',
-    price: 199.99,
-  },
-  {
-    id: 2,
-    name: 'Heated Jacket - Blue',
-    image: '/images/heated-jacket-blue.jpg',
-    price: 199.99,
-  },
-  {
-    id: 3,
-    name: 'Power Bank',
-    image: '/images/power-bank.jpg',
-    price: 49.99,
-  },
-];
-
 const ProductList: React.FC = () => {
+  const [products, setProducts] = useState<Product[]>([]);
+
+  useEffect(() => {
+    const fetchProducts = async () => {
+      const fetchedProducts = await ProductService.getProducts();
+      setProducts(fetchedProducts);
+    };
+    fetchProducts();
+  }, []);
+
   return (
     <div className="product-list">
       <h1>Our Products</h1>

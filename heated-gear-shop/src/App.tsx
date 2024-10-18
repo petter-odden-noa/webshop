@@ -1,19 +1,20 @@
 import React from 'react';
-import './App.css';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import { CartProvider } from './context/CartContext';
+import Header from './components/Header';
+import Footer from './components/Footer';
 import Home from './pages/Home';
 import ProductList from './pages/ProductList';
 import ProductDetail from './pages/ProductDetail';
 import Cart from './pages/Cart';
-import Header from './components/Header';
-import Footer from './components/Footer';
-import { CartProvider } from './context/CartContext';
+import Checkout from './pages/Checkout';
+import './App.css';
 
 function App() {
   return (
     <CartProvider>
       <Router>
-        <div className="app-container">
+        <div className="App">
           <Header />
           <main>
             <Routes>
@@ -21,6 +22,7 @@ function App() {
               <Route path="/products" element={<ProductList />} />
               <Route path="/products/:id" element={<ProductDetail />} />
               <Route path="/cart" element={<Cart />} />
+              <Route path="/checkout" element={<Checkout />} />
             </Routes>
           </main>
           <Footer />
